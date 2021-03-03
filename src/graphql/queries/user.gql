@@ -1,0 +1,22 @@
+# Query
+query user($id: ID!) {
+    user(id: $id) {
+        name
+        email
+        # password
+        password
+    }
+}
+
+query session {
+    session
+}
+
+# Mutation
+
+mutation login {
+    startSession
+}
+mutation logout {
+    endSession
+}
