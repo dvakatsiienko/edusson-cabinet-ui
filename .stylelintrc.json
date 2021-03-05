@@ -1,10 +1,5 @@
 {
-    "processors": ["stylelint-processor-styled-components"],
-    "extends": [
-        "stylelint-config-standard",
-        "stylelint-config-styled-components",
-        "stylelint-config-recess-order"
-    ],
+    "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
     "plugins": [
         "stylelint-order",
         "stylelint-selector-no-empty",
@@ -18,13 +13,12 @@
         "plugin/declaration-block-no-ignored-properties": true,
         "csstools/value-no-unknown-custom-properties": [
             true,
-            {
-                "importFrom": ["./src/theme/palette.css"]
-            }
+            { "importFrom": ["./src/theme/palette.css"] }
         ],
         "csstools/use-nesting": "always",
         "value-keyword-case": ["lower", { "ignoreKeywords": ["dummyValue"] }],
 
-        "indentation": 4
+        "indentation": 4,
+        "declaration-colon-newline-after": null
     }
 }

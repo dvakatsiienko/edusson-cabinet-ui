@@ -2,7 +2,6 @@
     "recommendations": [
         "dbaeumer.vscode-eslint",
         "formulahendry.auto-rename-tag",
-        "graphql.vscode-graphql",
-        "jpoissonnier.vscode-styled-components"
+        "graphql.vscode-graphql"
     ]
 }

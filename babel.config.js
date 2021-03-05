@@ -7,11 +7,7 @@ module.exports = api => {
     api.cache.using(() => env === 'development');
 
     const presets = [ 'next/babel' ];
-    const plugins = [
-        [ 'styled-components', { ssr: true }],
-        [ 'transform-define', envConfig ],
-        'graphql-tag',
-    ];
+    const plugins = [[ 'transform-define', envConfig ], 'graphql-tag' ];
 
     return { presets, plugins };
 };
