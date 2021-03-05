@@ -1,9 +1,9 @@
 # Query
 query user($id: ID!) {
     user(id: $id) {
-        name
+        firstName
+        lastName
         email
-        # password
         password
     }
 }

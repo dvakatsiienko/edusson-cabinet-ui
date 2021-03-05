@@ -6,7 +6,7 @@ import { ApolloClient, NormalizedCacheObject } from '@apollo/client';
 import nprogress from 'nprogress';
 
 /* Instruments */
-import '@/theme/global.css';
+import '@/theme/global.scss';
 
 const _App = (
     props: AppProps & { apollo: ApolloClient<NormalizedCacheObject> },

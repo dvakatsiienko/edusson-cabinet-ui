@@ -1,6 +1,6 @@
 {
     /* File inclusion */
-    "exclude": ["node_modules"],
+    "exclude": ["node_modules", "src/graphql/"],
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
 
     "compilerOptions": {

@@ -1,15 +1,15 @@
-@import './palette.css';
-@import './nprogress.css';
-@import './fonts.css';
+@import './palette.scss';
+@import './nprogress.scss';
+@import './fonts.scss';
 
 :root {
-    font-family: Roboto, system-ui;
     box-sizing: border-box;
-    font-size: 62.5%;
 
     /* Resolve scrollbar layout jupming issue. */
     width: 100vw;
     overflow-x: hidden;
+    font-family: Roboto, system-ui;
+    font-size: 62.5%;
 }
 
 body {
@@ -20,8 +20,8 @@ body {
 }
 
 a {
-    text-decoration: none;
     color: var(--black);
+    text-decoration: none;
 
     &:hover {
         text-decoration: underline;
@@ -33,7 +33,7 @@ button {
 }
 
 *,
-*:before,
-&:after {
+*::before,
+*::after {
     box-sizing: inherit;
 }

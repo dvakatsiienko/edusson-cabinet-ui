@@ -35,13 +35,6 @@ export type QueryUserArgs = {
     id: Scalars['ID'];
 };
 
-export type User = {
-    __typename?: 'User';
-    name?: Maybe<Scalars['String']>;
-    email?: Maybe<Scalars['String']>;
-    password?: Maybe<Scalars['String']>;
-};
-
 export type Mutation = {
     __typename?: 'Mutation';
     createUser?: Maybe<User>;
@@ -51,6 +44,14 @@ export type Mutation = {
 
 export type MutationCreateUserArgs = {
     data?: Maybe<UserCreateInput>;
+};
+
+export type User = {
+    __typename?: 'User';
+    firstName?: Maybe<Scalars['String']>;
+    lastName?: Maybe<Scalars['String']>;
+    email?: Maybe<Scalars['String']>;
+    password?: Maybe<Scalars['String']>;
 };
 
 export type UserCreateInput = {
@@ -71,7 +72,10 @@ export type UserQueryVariables = Exact<{
 }>;
 
 export type UserQuery = { __typename?: 'Query' } & {
-    user: { __typename?: 'User' } & Pick<User, 'name' | 'email' | 'password'>;
+    user: { __typename?: 'User' } & Pick<
+        User,
+        'firstName' | 'lastName' | 'email' | 'password'
+    >;
 };
 
 export type SessionQueryVariables = Exact<{ [key: string]: never }>;
@@ -95,7 +99,8 @@ export type LogoutMutation = { __typename?: 'Mutation' } & Pick<
 export const UserDocument = gql`
     query user($id: ID!) {
         user(id: $id) {
-            name
+            firstName
+            lastName
             email
             password
         }
@@ -274,17 +279,6 @@ export type QueryFieldPolicy = {
     user?: FieldPolicy<any> | FieldReadFunction<any>;
     session?: FieldPolicy<any> | FieldReadFunction<any>;
 };
-export type UserKeySpecifier = (
-    | 'name'
-    | 'email'
-    | 'password'
-    | UserKeySpecifier
-)[];
-export type UserFieldPolicy = {
-    name?: FieldPolicy<any> | FieldReadFunction<any>;
-    email?: FieldPolicy<any> | FieldReadFunction<any>;
-    password?: FieldPolicy<any> | FieldReadFunction<any>;
-};
 export type MutationKeySpecifier = (
     | 'createUser'
     | 'startSession'
@@ -296,6 +290,19 @@ export type MutationFieldPolicy = {
     startSession?: FieldPolicy<any> | FieldReadFunction<any>;
     endSession?: FieldPolicy<any> | FieldReadFunction<any>;
 };
+export type UserKeySpecifier = (
+    | 'firstName'
+    | 'lastName'
+    | 'email'
+    | 'password'
+    | UserKeySpecifier
+)[];
+export type UserFieldPolicy = {
+    firstName?: FieldPolicy<any> | FieldReadFunction<any>;
+    lastName?: FieldPolicy<any> | FieldReadFunction<any>;
+    email?: FieldPolicy<any> | FieldReadFunction<any>;
+    password?: FieldPolicy<any> | FieldReadFunction<any>;
+};
 export type TypedTypePolicies = TypePolicies & {
     Query?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
         keyFields?:
@@ -304,18 +311,18 @@ export type TypedTypePolicies = TypePolicies & {
             | (() => undefined | QueryKeySpecifier);
         fields?: QueryFieldPolicy;
     };
-    User?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
-        keyFields?:
-            | false
-            | UserKeySpecifier
-            | (() => undefined | UserKeySpecifier);
-        fields?: UserFieldPolicy;
-    };
     Mutation?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
         keyFields?:
             | false
             | MutationKeySpecifier
             | (() => undefined | MutationKeySpecifier);
         fields?: MutationFieldPolicy;
+    };
+    User?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+        keyFields?:
+            | false
+            | UserKeySpecifier
+            | (() => undefined | UserKeySpecifier);
+        fields?: UserFieldPolicy;
     };
 };

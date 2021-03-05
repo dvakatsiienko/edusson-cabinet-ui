@@ -18,11 +18,9 @@ const typeDefs = apollo.gql`
 const typePolicies = {
     User: {
         fields: {
-            name: {
-                read(...rest) {
-                    console.log('TEST', rest);
-
-                    return 'Walter';
+            firstName: {
+                read() {
+                    return 'Client-mocked FirstName';
                 },
             },
         },
@@ -40,8 +38,6 @@ export const createApolloClient = (
 
         headers.cookie = `${KEYSTONE_COOKIE_NAME}=${cookie}`;
     }
-
-    console.log('CREATE_APOLLO_CLIENT');
 
     return new apollo.ApolloClient({
         typeDefs,
