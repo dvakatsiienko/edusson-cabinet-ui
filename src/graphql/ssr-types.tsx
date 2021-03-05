@@ -1,7 +1,7 @@
 import * as Types from './operation-types';
 
 import * as Operations from './operation-types';
-import { NextPage } from 'next';
+// import { NextPage } from 'next';
 import { NextRouter, useRouter } from 'next/router';
 import { QueryHookOptions, useQuery } from '@apollo/client';
 import * as Apollo from '@apollo/client';
