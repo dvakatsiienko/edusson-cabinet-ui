@@ -1,6 +1,5 @@
 /* Core */
 import React from 'react';
-// import styled from 'styled-components';
 
 export const ErrorMessage = ({ error }) => {
     if (!error || !error.message) {
@@ -12,8 +11,8 @@ export const ErrorMessage = ({ error }) => {
         error.networkError.result.errors.length
     ) {
         return error.networkError.result.errors.map((error, i) => (
-            <div key={i}>
-                <p data-test="graphql-error">
+            <div key = { i }>
+                <p data-test = 'graphql-error'>
                     <strong>Shoot!</strong>
                     {error.message.replace('GraphQL error: ', '')}
                 </p>
@@ -22,7 +21,7 @@ export const ErrorMessage = ({ error }) => {
     }
     return (
         <div>
-            <p data-test="graphql-error">
+            <p data-test = 'graphql-error'>
                 <strong>Shoot!</strong>
                 {error.message.replace('GraphQL error: ', '')}
             </p>
