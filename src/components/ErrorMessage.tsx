@@ -6,15 +6,15 @@ export const ErrorMessage = ({ error }) => {
         return null;
     }
     if (
-        error.networkError &&
-        error.networkError.result &&
-        error.networkError.result.errors.length
+        error.networkError
+        && error.networkError.result
+        && error.networkError.result.errors.length
     ) {
-        return error.networkError.result.errors.map((error, i) => (
-            <div key = { i }>
+        return error.networkError.result.errors.map((networkError, index) => (
+            <div key = { index }>
                 <p data-test = 'graphql-error'>
                     <strong>Shoot!</strong>
-                    {error.message.replace('GraphQL error: ', '')}
+                    {networkError.message.replace('GraphQL error: ', '')}
                 </p>
             </div>
         ));

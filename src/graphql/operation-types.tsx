@@ -14,6 +14,7 @@ export type MakeOptional<T, K extends keyof T> = Omit<T, K> &
     { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> &
     { [SubKey in K]: Maybe<T[SubKey]> };
+const defaultOptions = {};
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
     ID: string;
@@ -126,17 +127,19 @@ export const UserDocument = gql`
 export function useUserQuery(
     baseOptions: Apollo.QueryHookOptions<UserQuery, UserQueryVariables>,
 ) {
+    const options = { ...defaultOptions, ...baseOptions };
     return Apollo.useQuery<UserQuery, UserQueryVariables>(
         UserDocument,
-        baseOptions,
+        options,
     );
 }
 export function useUserLazyQuery(
     baseOptions?: Apollo.LazyQueryHookOptions<UserQuery, UserQueryVariables>,
 ) {
+    const options = { ...defaultOptions, ...baseOptions };
     return Apollo.useLazyQuery<UserQuery, UserQueryVariables>(
         UserDocument,
-        baseOptions,
+        options,
     );
 }
 export type UserQueryHookResult = ReturnType<typeof useUserQuery>;
@@ -166,9 +169,10 @@ export const SessionDocument = gql`
 export function useSessionQuery(
     baseOptions?: Apollo.QueryHookOptions<SessionQuery, SessionQueryVariables>,
 ) {
+    const options = { ...defaultOptions, ...baseOptions };
     return Apollo.useQuery<SessionQuery, SessionQueryVariables>(
         SessionDocument,
-        baseOptions,
+        options,
     );
 }
 export function useSessionLazyQuery(
@@ -177,9 +181,10 @@ export function useSessionLazyQuery(
         SessionQueryVariables
     >,
 ) {
+    const options = { ...defaultOptions, ...baseOptions };
     return Apollo.useLazyQuery<SessionQuery, SessionQueryVariables>(
         SessionDocument,
-        baseOptions,
+        options,
     );
 }
 export type SessionQueryHookResult = ReturnType<typeof useSessionQuery>;
@@ -220,9 +225,10 @@ export function useLoginMutation(
         LoginMutationVariables
     >,
 ) {
+    const options = { ...defaultOptions, ...baseOptions };
     return Apollo.useMutation<LoginMutation, LoginMutationVariables>(
         LoginDocument,
-        baseOptions,
+        options,
     );
 }
 export type LoginMutationHookResult = ReturnType<typeof useLoginMutation>;
@@ -263,9 +269,10 @@ export function useLogoutMutation(
         LogoutMutationVariables
     >,
 ) {
+    const options = { ...defaultOptions, ...baseOptions };
     return Apollo.useMutation<LogoutMutation, LogoutMutationVariables>(
         LogoutDocument,
-        baseOptions,
+        options,
     );
 }
 export type LogoutMutationHookResult = ReturnType<typeof useLogoutMutation>;

@@ -2,6 +2,9 @@
 import { NextPage } from 'next';
 import { ApolloProvider } from '@apollo/client';
 
+/* Instruments */
+import { createApolloClient as getApolloClient } from './createApolloClient';
+
 // eslint-disable-next-line
 export const withApollo = (Comp: NextPage) => (props: any) => {
     return (
@@ -10,6 +13,3 @@ export const withApollo = (Comp: NextPage) => (props: any) => {
         </ApolloProvider>
     );
 };
-
-import { createApolloClient as getApolloClient } from './createApolloClient';
-export { getApolloClient };

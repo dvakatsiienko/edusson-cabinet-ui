@@ -11,9 +11,9 @@
         "plugin/stylelint-selector-no-empty": true,
         "plugin/declaration-block-no-ignored-properties": true,
         "csstools/use-nesting": "always",
-        "value-keyword-case": ["lower", { "ignoreKeywords": ["dummyValue"] }],
 
         "indentation": 4,
-        "declaration-colon-newline-after": null
+        "declaration-colon-newline-after": null,
+        "value-keyword-case": ["lower", { "ignoreKeywords": ["dummyValue"] }]
     }
 }
