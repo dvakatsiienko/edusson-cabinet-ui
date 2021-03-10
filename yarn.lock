@@ -8168,6 +8168,11 @@ ts-pnp@^1.1.6:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
+tsconfig-dva@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/tsconfig-dva/-/tsconfig-dva-0.0.3.tgz#674b7fc10750c677438abb269b2b57471dbfd38d"
+  integrity sha512-O4S/lsygDKICAQ5K4hkzBg2P9OtOKpTZ0umgHsTFFpm9u7Hw2JD/WGiwiv3BYuo5r7uT+fZJdSVaHpJpIURzwQ==
+
 tsconfig-paths@^3.9.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.9.0.tgz#098547a6c4448807e8fcb8eae081064ee9a3c90b"

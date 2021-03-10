@@ -1,43 +1,12 @@
 {
     /* File inclusion */
-    "exclude": ["node_modules", "src/graphql/"],
+    "exclude": ["node_modules"],
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
 
+    "extends": "tsconfig-dva",
     "compilerOptions": {
-        /* Project options */
-        "target": "ESNext",
-        "module": "ESNext",
-        "lib": ["DOM", "DOM.Iterable", "ESNext"],
-        "allowJs": true,
-        "jsx": "preserve",
-        "declaration": true,
-        "outDir": "dist/ts",
-        "removeComments": true,
-        "noEmit": true,
-
-        /* Strict checks */
-        "strict": false,
-        "noImplicitAny": false,
-
         /* Module resolution */
-        "moduleResolution": "Node",
         "baseUrl": ".",
-        "paths": { "@/*": ["src/*"] },
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-
-        /* Source maps */
-        "sourceMap": true,
-
-        /* Linter checks */
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-
-        /* Advanced */
-        "resolveJsonModule": true,
-        "skipLibCheck": true,
-        "allowUnusedLabels": true,
-        "forceConsistentCasingInFileNames": true,
-        "isolatedModules": true
+        "paths": { "@/*": ["src/*"] }
     }
 }
