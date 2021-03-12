@@ -1,9 +1,10 @@
 {
+    "extends": "tsconfig-dva",
+
     /* File inclusion */
     "exclude": ["node_modules"],
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
 
-    "extends": "tsconfig-dva",
     "compilerOptions": {
         /* Module resolution */
         "baseUrl": ".",

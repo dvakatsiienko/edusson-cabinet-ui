@@ -1,5 +1,5 @@
 /* Core */
-import { NextPage } from 'next';
+import { NextPage, GetServerSideProps } from 'next';
 
 /* Instruments */
 import * as gql from '@/graphql';
@@ -15,6 +15,14 @@ const IndexPage: NextPage = () => {
             <pre>{userData}</pre>
         </>
     );
+};
+
+export const getServerSideProps: GetServerSideProps = async ctx => {
+    const [ userQuery ] = await Promise.all([
+        gql.ssrUser.getServerPage({ variables: { id: '123' } }, ctx),
+    ]);
+
+    return userQuery;
 };
 
 export default withApollo(IndexPage);
