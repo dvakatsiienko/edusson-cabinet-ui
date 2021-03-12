@@ -1,6 +1,6 @@
 /* Core */
 import { GetServerSidePropsContext } from 'next';
-import * as apollo from '@apollo/client';
+import * as apollo                   from '@apollo/client';
 
 /* Instruments */
 import * as links from './links';

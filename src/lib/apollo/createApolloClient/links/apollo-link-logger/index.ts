@@ -1,6 +1,6 @@
 import { ApolloLink } from '@apollo/client';
-import formatMessage from './formatMessage';
-import logging from './logging';
+import formatMessage  from './formatMessage';
+import logging        from './logging';
 
 export const loggerLink = new ApolloLink((operation, forward) => {
     const startTime = new Date().getTime();

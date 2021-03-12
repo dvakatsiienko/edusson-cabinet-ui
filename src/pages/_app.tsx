@@ -1,9 +1,9 @@
 /* Core */
-import router from 'next/router';
-import { AppProps } from 'next/app';
-import Head from 'next/head';
+import router                                  from 'next/router';
+import { AppProps }                            from 'next/app';
+import Head                                    from 'next/head';
 import { ApolloClient, NormalizedCacheObject } from '@apollo/client';
-import nprogress from 'nprogress';
+import nprogress                               from 'nprogress';
 
 /* Instruments */
 import '@/theme/global.scss';

@@ -1,6 +1,6 @@
 /* Core */
 import { onError } from '@apollo/link-error';
-import debug from 'debug';
+import debug       from 'debug';
 
 const logGql = debug('[GraphQL error]');
 

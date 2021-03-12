@@ -1,5 +1,5 @@
 /* Core */
-import { NextPage } from 'next';
+import { NextPage }       from 'next';
 import { ApolloProvider } from '@apollo/client';
 
 /* Instruments */
