@@ -52,7 +52,7 @@
         "babel-plugin-graphql-tag": "3.2.0",
         "babel-plugin-transform-define": "2.0.0",
         "dotenv": "8.2.0",
-        "eslint": "7.21.0",
+        "eslint": "7.22.0",
         "eslint-config-airbnb": "18.2.1",
         "eslint-config-dva": "0.0.5",
         "eslint-plugin-align-import": "1.0.0",
